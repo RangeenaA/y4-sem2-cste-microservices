@@ -4,8 +4,8 @@ const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser');
 const db = require('./config/db');
-const http = require("http");
-const qs = require("querystring");
+// const http = require("http");
+// const qs = require("querystring");
 // const fetch = require("node-fetch");
 
 // Constants
@@ -54,20 +54,6 @@ app.get('/', (req, res) => {
 </body>
 </html>
 `
-// function addItem() {
-//   fetch("localhost:8080/inventory").then(res => {
-//     return res.text()
-//   }).then(text => {
-//     alert(text)
-//   })
-// }
-
-// const form = document.getElementById("add_item_form");
-// form.addEventListener("submit", (e) => {
-//   e.preventDefault();
-//   console.log("Form submitted");
-// })
-
 res.send(markup);
 });
 

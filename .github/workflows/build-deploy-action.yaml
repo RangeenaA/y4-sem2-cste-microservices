@@ -19,3 +19,5 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/inventory-app:${{github.sha}}
+    - name: Update config file in k8s
+      run: sed -i.bak 's/{{tag}}/${{github.sha}}/g' k8s/deploy.yaml && rm k8s/*.bak
